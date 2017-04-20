@@ -73,3 +73,25 @@ time3 = Date.parse(date);
 */
 
 ```
+
+>Date()的参数
+
+```
+new Date("month dd,yyyy hh:mm:ss");
+new Date("month dd,yyyy");
+new Date("yyyy/MM/dd hh:mm:ss");
+new Date("yyyy/MM/dd");
+new Date(yyyy,mth,dd,hh,mm,ss);
+new Date(yyyy,mth,dd);
+new Date(ms);
+
+比如
+new Date("September 16,2016 14:15:05");
+new Date("September 16,2016");
+new Date("2016/09/16 14:15:05");
+new Date("2016/09/16");
+new Date(2016,8,16,14,15,5); // 月份从0～11
+new Date(2016,8,16);
+new Date(1474006780);
+
+```
