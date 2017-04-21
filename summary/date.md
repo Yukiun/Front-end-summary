@@ -74,7 +74,7 @@ time3 = Date.parse(date);
 
 ```
 
->Date()的参数
+> Date()的参数
 
 ```
 new Date("month dd,yyyy hh:mm:ss");
