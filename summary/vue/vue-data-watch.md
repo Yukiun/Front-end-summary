@@ -7,6 +7,7 @@
     <input v-model="allDays"/>
     </div>
 </template>
+
 <script>
 export default {
     data() {
