@@ -78,4 +78,15 @@ v-model在编译的时候自动添加了一层判断，根据event.target.compos
 
 - v-model.number 自动把输入内容转为数字
 
+```
+从之前的源码来看，vue.js使用了一个_n函数来处理输入内容，也就是说v-model.number的行为可以这样模仿
+
+_n 是一个toNumber 的工具函数
+
+/** * Convert a input value to a number for persistence. * If the conversion fails, return original string. */ export function toNumber (val: string): number | string { const n = parseFloat(val) return isNaN(n) ? val : n }
+
+它是使用parseFloat函数来转的数字，再使用isNaN判断转换结果，如果结果是NaN,那么就返回原字符串，否则返回转为数字后的结果；
+```
+number 修饰符不能限制输入内容,因为使用的是parsetFloat函数,
+
 
