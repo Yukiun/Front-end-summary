@@ -5,10 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 300px;
+            border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            height: 15px;
+            border-radius: 10px; /*将轨道设为圆角的*/
+            box-shadow: 0 1px 1px gray, inset 1px 1px gray; /*轨道内置阴影效果*/
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 25px;
+            width: 25px;
+            margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+            background: red; 
+            border-radius: 50%; /*外观设置为圆形*/
+            {#border: solid 1px gray; /*设置边框*/#}
+            {#box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/#}
+        }
+        input[type=range]::-ms-fill-lower {
+            /*进度条已填充的部分*/
+            height: 22px;
+            border-radius: 10px;
+            {#background: linear-gradient(to right, #059CFA, white 100%, white);#}
+            background: red;
+        }
+
+        input[type=range]::-ms-fill-upper {
+            /*进度条未填充的部分*/
+            height: 22px;
+            border-radius: 10px;
+            background: red;
+        }
+        {#.slider {
+            background-color: red;
+            width:300px;
+            height: 15px;
+            border-radius: 10px;
+            position: absolute;
+            top: 3px;
+        }
+        .setRange {
+            position: relative;
+            z-index: -1;
+        }#}
+    </style>
 </head>
 <body>
-    <input type=range min=10 max=30 value=10 step=1>
-<input type=range multiple min=0 max=10 step="0.2" value="3,5">
+<div id="app">
+<div class="setRange">
+    <div class="slider"></div>
+    <input type="range" v-model.number="rangeValue" :min="min" :max="max" >
+</div>
+    <div class="rangeValue">
+       变化范围 {{rangeValue}}
+    </div>
 
+</div>
 </body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!',
+    rangeValue: 7,
+    min: 7,
+    max: 14,
+
+  }
+});
+</script>
 </html>
