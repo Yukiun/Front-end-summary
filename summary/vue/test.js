@@ -1,1 +1,28 @@
-function genDefaultModel(el: ASTElement, value: string, modifiers: ?ASTModifiers): ?boolean { const type = el.attrsMap.type const { lazy, number, trim } = modifiers || {} const needCompositionGuard = !lazy && type !== 'range' const event = lazy ? 'change' : type === 'range' ? RANGE_TOKEN : 'input' let valueExpression = '$event.target.value' if (trim) { valueExpression = `$event.target.value.trim` } if (number) { valueExpression = `_n(${valueExpression})` } let code = genAssignmentCode(value, valueExpression) if (needCompositionGuard) { code = `if($event.target.composing)return;${code}` } addProp(el, 'value', `(${value})`) addHandler(el, event, code, null, true) if (trim || number || type === 'number') { addHandler(el, 'blur', '$forceUpdate') } }
+function Foo() {
+    getName = function () {
+         console.log(1); 
+    };
+    return this;
+}
+Foo.getName = function () {
+    console.log(2); 
+};
+Foo.prototype.getName = function () {
+    console.log(3); 
+};
+var getName = function () {
+    console.log(4); 
+};
+function getName() {
+    console.log(5);
+}
+
+//请写出以下输出结果：
+Foo.getName(); //2
+getName(); // 4 函数
+// Foo().getName(); //
+getName(); // 4 
+new Foo.getName();// 2
+new Foo().getName();//3
+new new Foo().getName();//3
+
