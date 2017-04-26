@@ -62,14 +62,13 @@
 </head>
 <body>
 <div id="app">
+<div><input type="number" v-model.number="allDays"></div>
 <div class="setRange">
-    <div class="slider"></div>
-    <input type="range" v-model.number="rangeValue" :min="min" :max="max" >
+   <span>{{allDays/2}}</span> <input type="range" v-model.number="rangeValue" :min="allDays/2" :max="allDays" ><span>{{allDays}}</span>
 </div>
     <div class="rangeValue">
-       变化范围 {{rangeValue}}
+       变化范围 {{rangeDay}}
     </div>
-
 </div>
 </body>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -79,11 +78,20 @@ var app = new Vue({
   el: '#app',
   data: {
     message: 'Hello Vue!',
-    rangeValue: 7,
+    rangeDay: 7,
     min: 7,
     max: 14,
-
-  }
+    allDays: 14,
+  },
+  watch: {
+        allDays: {
+            handler: function (val, oldVal) {
+                this.rangeDay = Math.round(this.allDays / 2);
+                console.log(this.rangeDay);
+            },
+            deep: true,
+        },
+    },
 });
 </script>
 </html>
