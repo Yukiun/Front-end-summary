@@ -39,7 +39,7 @@
             height: 15px;
             border-radius: 10px;
             position: absolute;
-            top: 4px;
+            top: 2px;
             /*right: -10px;*/
             /*z-index: -1;*/
         }
@@ -49,7 +49,7 @@
             background-color: #d03043;
             border-radius: 50%;
             position: absolute;
-            top: 4px;
+            top: 2px;
         }
         .setRange {
             position: relative;
@@ -59,17 +59,17 @@
 </head>
 <body>
 <div id="app">
-<div><input type="number" v-model.number="allDays"></div>
-<div class="setRange">
-<<<<<<< HEAD
-   <span>{{allDays/2}}</span> <input type="range" v-model.number="rangeValue" :min="allDays/2" :max="allDays" ><span>{{allDays}}</span>
-=======
-    <div class="round" :style="{left: ((rangeValue-7)/7) * 276 + 7 + 'px'}"></div>
-    <div class="slider" :style="{width: ((rangeValue-7)/7) * 276 + (rangeValue - 7 ? 12 : 0) + 'px'}">
-    </div>
-    <input type="range" v-model.number="rangeValue" :min="min" :max="max" >
->>>>>>> 3a46aab86f72ee598db0cc518f58b6affcc86ee7
+<div>
+   <input type="number" v-model.number="allDays">
 </div>
+<div class="setRange">
+    <div class="round" :style="{left: ((rangeDay- Math.round(allDays / 2))/(allDays - Math.round(allDays / 2))) * 276 + 7 + 'px'}"></div>
+    <div class="slider" :style="{width: ((rangeDay- Math.round(allDays / 2))/(allDays - Math.round(allDays / 2))) * 276 + (rangeDay - Math.round(allDays / 2)  ? 12 : 0) + 'px'}">
+    </div>
+    <input type="range" v-model.number="rangeDay" :min="Math.round(allDays / 2)" :max="allDays" >
+    <span>最小值{{Math.round(allDays / 2)}}</span><span>最大值{{allDays}}</span>
+</div>
+
     <div class="rangeValue">
        变化范围 {{rangeDay}}
     </div>
