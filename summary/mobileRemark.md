@@ -1,8 +1,5 @@
 > 最近遇到项目中要做一个评论动态的功能,然后遇到了几个很恶心的问题
 
-[参考1](http://www.alloyteam.com/2017/03/moves-the-input-box-fill-series-a/)
-[参考2](http://www.cnblogs.com/yexiaochai/p/3561939.html)
-
 - 1,如果我们需要将输入框固定在屏幕下方，而当键盘被唤起同时输入框固定在键盘上方
 
 ```
@@ -24,7 +21,7 @@ $('#textarea').css('height', $('#textarea')[0].scrollHeight);
 
 ```
 
-- 2,移动端虚拟键盘把fixed定位、绝对定位元素顶上去bug的解决方案
+- 2,移动端虚拟键盘把fixed定位、绝对定位元素顶上去bug的解决方案(H5 web 移动端 输入框, 键盘唤起后fixed定位好的元素跟随页面滚动了起来… fixed属性失效了！满屏任性横飞)
 
 ```
 window.onresize = function(e){
@@ -36,3 +33,27 @@ window.onresize = function(e){
 }
 
 ```
+
+最后总结遇到的问题如下
+- 虚拟键盘弹起时，fixed样式失效
+- 无法监听虚拟键盘弹起、关闭状态
+
+- js拿不到键盘的 弹起/收起 事件;
+
+- ios上键盘 弹起/收回 不会触发window.resize事件;
+
+- android 4.4 以下, 键盘唤起时, 不仅会触发resize, 而且会触发scroll事件;
+- (如果有需要滑动失去焦点这个需求, 选择touchMove, 不要选择scroll)
+
+- ios之所以会遮挡输入框, 是因为, 第三方输入法的tool bar 或者 键盘也被当做可视区域了(包含在键盘弹出时的window.innerHeight)
+
+总结
+最后建议, 类似这种需求,尽量不要放在屏幕下50%:
+
+转场输入评论, 微博等;
+
+弹窗到可视区域上50%区域, 3G门户;
+
+[参考1](http://www.alloyteam.com/2017/03/moves-the-input-box-fill-series-a/)
+[参考2](http://www.cnblogs.com/yexiaochai/p/3561939.html)
+[参考3](http://www.zhimengzhe.com/Javascriptjiaocheng/96116.html)
