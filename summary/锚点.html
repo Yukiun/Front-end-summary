@@ -35,4 +35,16 @@
     <a href="#div4" >4<a/>
     <a href="#div5" >5<a/>
 </body>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+// 用setTimeOut模拟数据请求完之后触发
+    setTimeout(function(){
+        var hash = $.getUrlParam("location");
+        var newA = $('<a href="#'+ hash +'"></a>');
+        newA.css("opacity", "0");
+        $("body").append(newA);  
+        newA.trigger("click"); // 触发click事件
+    },100)
+    
+</script>
 </html>
