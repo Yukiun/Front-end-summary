@@ -67,12 +67,85 @@ var myObject = {
 // c
 
 // console.log(Object.keys(myObject));  [ 'a', 'b', 'c' ]
-Object.keys(myObject).forEach(function(key, index){
-    console.log(key, myObject[key]);
-})
+// Object.keys(myObject).forEach(function(key, index){
+//     console.log(key, myObject[key]);
+// })
 // a 1
 // b 2
 // c 3
 // 同样可以通过ES5的Object.keys(myObject)获取对象的实例属性组成的数组，不包括原型方法和属性。
 
-for of 用来遍历数组的值
+// for of 用来遍历数组的值
+
+const datas = ['1', '2', '3'];
+let timer = null;
+for (let i = 0; i < datas.length; i++) {
+    //    const index = i;
+    if (timer) {
+        clearTimeout(timer);
+        let timer = setTimeout(function () {
+            console.log(datas[i]);
+        }, 10000 * i)
+    } else {
+        let timer = setTimeout(function () {
+            console.log(datas[i]);
+        }, 10000 * i)
+    }
+};
+const arr = [1,3,42,4];
+const list = [
+    {
+        "name": "first",
+        "index": 1,
+    },
+    {
+        "name": "second",
+        "index": 2,
+    },
+    {
+        "name": "third",
+        "index": 3,
+    },
+    {
+        "name": "fourth",
+        "index": 4,
+    },
+]
+function compare(property){
+    return function(a,b){
+        return a[property] - a[property];
+    }
+}
+console.log(list.sort(compare('index')))
+// function sortArr(arr) {
+//     return arr.sort(function(a, b) {
+//         return a - b;
+//     })
+// }
+// console.log(sortArr(arr));
+
+function Foo() {
+    getName = function() {
+        console.log(1);
+    };
+    return this;
+};
+Foo.getName = function() {
+    console.log(2);
+};
+Foo.prototype.getName = function() {
+    console.log(3);
+};
+var getName = function() {
+    console.log(4);
+}
+function getName() {
+    console.log(5);
+}
+Foo.getName(); // 2
+getName();// 4
+Foo().getName();  // Foo(...).getName is not a function,
+getName(); // 4
+new Foo.getName(); // 2
+new Foo().getName();//  Foo(...).getName is not a function,
+new new Foo().getName();// 3
