@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 需求说明：当用户浏览到页面底部时候，自动加载下一页的内容
+// 实现原理：JS获取当前滚动条高度、滚动条长度以及页面总长度，当滚动条高度加上当前滚动条长度等于页面总长度的时候，页面到达底部，此时可以触发ajax加载下一页内容。
+
+// 获取滚动条当前的位置
+funciton getScrollTop() {
+    var scrollTop = 0;
+    if(document.documentElement && document.documentElement.scrollTop) {
+        scrollTop = document.documentElement.scrollTop;
+    } else if (document.body) {
+        scrollTop = document.body.scrollTop;
+    }
+    return scrollTop;
+}
+// 获取当前可视范围的高度
+funciton getClientHeight() {
+    var clientHeight = 0;
+    if(document.body.clientHeight && document.documentElement.clientHeight) {
+        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+    } else {
+        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+    }
+    return clientHeight;
+}
+// 获取文档完整的高度
+funciton getScrollHeight() {
+    return Math.max(document.body.clientHeight, document.documentElement.scrollTop);
+}
+window.onscroll = funciton() {
+    if(getScrollTop() + getClientHeight() == getScrollHeight()) {
+        
+    }
+}
+</script>
+</html>
