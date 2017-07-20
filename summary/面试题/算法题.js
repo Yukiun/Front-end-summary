@@ -96,12 +96,16 @@
 // console.log(quickSort([3, 6, 2, 4, 9]));
 
 // 不借助临时变量，进行两个整数的交换
+// 方法一
 // function swap(a, b) {
 //     b = b - a;
 //     a = a + b;
 //     b = a - b;
 //     return [a,b];
 // }
-
-// 
+// 方法二 变量的解构赋值
+// let x = 1;
+// let y = 2;
+// [x, y] = [y, x];
+// console.log(x, y);
 
