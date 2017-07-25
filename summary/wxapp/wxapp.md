@@ -36,11 +36,7 @@ function getStorage(key) {
 - 判断本地缓存没有 session的时候时请求的第一个登录接口，安卓返回 getStorage:fail， ios 返回 res.errMsg == 'getStorage:fail data not found'，刚开始只判断了res.errMsg == 'getStorage:fail data not found'，所以安卓上会一直走reject，最后错误被catch出来，而并没有请求接口，导致没有数据
 - 总结： 微信小程序开发过程中一定要用真机测试，微信开发者工具和真机上很多地方都有出入
 
-#### 2,ios数据无法正常显示，请求接口一直显示need login,
-- 登录逻辑： 1，判断授权。
-
-
-#### 3，小程序接口异步问题
+#### 2，小程序接口异步问题
 - 没有使用别的框架，单纯的按照微信小程序的官方文档来写，所以并不能用es7的 async函数和await，只能用目前小程序所支持的promise,但是对每一个封装有很麻烦
 - 解决方案：写一个转换函数，将小程序的所有api转换成promise函数
 ```
@@ -81,3 +77,16 @@ wx._fun2({a: 5, b: 6}).then(sum => {
     console.log(err);
 });
 ```
+
+#### 3,ios数据无法正常显示，请求接口一直显示need login,
+- 登录逻辑： 1，微信授权 2,去请求get的login判断为true,时 3，获取header里的session存储起来，之后每次请求都得带上 4，去请求post的login接口
+所以先从判断授权开始，但是在真机上测试时，一开始并不弹出授权弹窗
+- 参考[提升用户体验，微信小程序“授权失败”场景的优雅处理](https://devework.com/weixin-weapp-auth-failed.html)
+所以尝试不在登录之前判断微信授权，果然可以请求到数据；而在需要的时候去判断是否授权，具体参考上述文档
+
+但是最后在onShow的时候也遇到一些问题
+tabBar页面A   navigatorTo 到页面B，然后B   switchTab 到A，这里A会执行onShow()；
+但是我再从A跳到B再switchTab回来，A就不会再执行onShow()了，
+去开发者社区询问，得知此问题在下个版本会修复
+
+
