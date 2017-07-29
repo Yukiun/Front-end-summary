@@ -7,28 +7,38 @@
 // console.log(x.y); // undefined
 // console.log(y.x); // 6
 
-function Foo() {
-    getName = function() {
-        console.log(1);
-    };
-    return this;
+// function Foo() {
+//     getName = function() {
+//         console.log(1);
+//     };
+//     return this;
+// }
+// Foo.getName = function () {
+//     console.log(2);
+// }
+// Foo.prototype.getName = function () {
+//     console.log(3);
+// }
+// var getName = function () {
+//     console.log(4);
+// }
+// function getName() {
+//     console.log(5);
+// }
+// Foo.getName(); // 2
+// getName(); // 4 
+// Foo().getName(); // Foo(...).getName is not a function
+// getName(); // 4
+// new Foo.getName(); // Foo is not defined
+// console.log(new Foo().getName);  // [Function]
+// new new Foo().getName(); // 3
+function add(xPromise, yPromise) {
+    // Promise.all([..]);
+    return Promise.all([xPromise, yPromise])
+            .then(function(values) {
+                return values[0] + values[1];
+            })
 }
-Foo.getName = function () {
-    console.log(2);
-}
-Foo.prototype.getName = function () {
-    console.log(3);
-}
-var getName = function () {
-    console.log(4);
-}
-function getName() {
-    console.log(5);
-}
-Foo.getName(); // 2
-getName(); // 4 
-Foo().getName(); // Foo(...).getName is not a function
-getName(); // 4
-new Foo.getName(); // Foo is not defined
-console.log(new Foo().getName);  // [Function]
-new new Foo().getName(); // 3
+add(fetchX(), fetchY()).then(function(sum) {
+    console.log(sum);
+})
