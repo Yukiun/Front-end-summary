@@ -26,3 +26,6 @@
 [正则](https://segmentfault.com/a/1190000007602848), 闭包，this, 作用域, 算法,
 [2016年十家公司面试小记](http://www.cnblogs.com/xxcanghai/p/5205998.html)
 [浅谈javascript的函数节流](http://www.alloyteam.com/2012/11/javascript-throttle/)
+[常见面试题1](https://github.com/jayli/jayli.github.com/issues/19)
+[常见面试题2](https://github.com/hawx1993/Front-end-Interview-questions)
+[面试题3](https://github.com/h5bp/Front-end-Developer-Interview-Questions/tree/master/Translations/Chinese)
