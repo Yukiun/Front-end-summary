@@ -1,4 +1,4 @@
-####请求首部字段
+#### 请求首部字段
 客户端往服务器发送报文中所使用的字段,用于补充请求的附加信息，客户端信息，对响应内容相关的优先级等内容
 1,Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 通知服务器，用户代理能够处理的媒体类型及媒体类型的相对优先级,可使用type/subtype这种形式,一次指定多种媒体类型
@@ -48,7 +48,7 @@ If-Modified-Since用于确认代理或客户端拥有的本地资源的有效性
 19，User-Agent:Mozilla/5.0(WindowsNT6.1;WOW64;rv:13.0)Gecko/20100101Firefox/13.0.1
 用于传达浏览器得种类
 首部字段User-Agent会将创建请求的浏览器和用户代理名称等信息传达给服务器。
-####响应首部字段
+#### 响应首部字段
 响应首部字段是由服务器端向客户端返回响应报文中所使用的字段,用于补充响应的附加信息,服务器信息，以及对客户端的附加要求信息
 1，Accept-Ranges:bytes
 2，Age:600
@@ -67,7 +67,7 @@ If-Modified-Since用于确认代理或客户端拥有的本地资源的有效性
 9，WWW-Authenticate:Basicrealm="UsagidesignAuth"
 10，首部字段WWW-Authenticate用于HTTP访问认证。
 
-####实体首部字段
+#### 实体首部字段
 是包含在请求报头和响应报文中的实体部分所使用的首部,用于补充内容的更新时间等与实体相关的信息
 1，Allow:GET,HEAD
 首部字段Allow用于通知客户端能够支持Request-URI指定资源的所有HTTP方法。当服务器接收到不支持的HTTP方法时，会以状态码405MethodNotAllowed作为响应返回。与此同时，还会把所有能支持的HTTP方法写入首部字段Allow后返回。
