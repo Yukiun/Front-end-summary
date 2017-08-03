@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        type: 'GET',
+        url: 'https://api.douban.com/v2/book/1220562',
+        success: function(data) {
+            console.log(data);
+            const div = document.createElement('ul');
+            let result = '';
+            for( let i = 0; i < data.tags.length; i++) {
+                result += '<li>'+ data.tags[i].title+'</li>';
+            }
+            div.innerHTML = result;
+            document.body.appendChild(div);
+        },
+    });
+});
+</script>
+</body>
+</html>
