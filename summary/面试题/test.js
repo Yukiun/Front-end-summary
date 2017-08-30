@@ -178,6 +178,5 @@
 // var demo = say();
 // demo(); // 667
 
-const set = new Set([1, 2, 3, 4, 4]);
-console.log([...set]);
-
+// const set = new Set([1, 2, 3, 4, 4]);
+// console.log([...set]);
