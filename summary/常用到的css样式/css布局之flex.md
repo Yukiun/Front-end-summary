@@ -71,4 +71,13 @@ item {
 如果所有子容器的flex-shrink属性都为1,当空间不足时,都将等比例缩小.如果一个项目的flex-shrink的属性为0,其他项目都为1,则空间不足时,前者不缩小;
 负值对该属性无效
 ### flex-basis属性
-flex-basis属性定义了在分配多余空间之前,项目占据了主轴空间,浏览器根据这个属性,计算主轴是否有多余空间.它的默认值为auto,即项目的本来大小
+flex-basis属性定义了在分配多余空间之前,项目占据了主轴空间,浏览器根据这个属性,计算主轴是否有多余空间.它的默认值为auto,即项目的本来大小;
+```
+item {
+    flex-basis: <length> | auto; /* default auto */
+}
+```
+它可以设置跟width和height属性一样的值(比如350px),则项目将占据固定空间
+
+### flex属性是
+flex是flex-grow,flex-shrink,flex-basis的缩写
