@@ -219,3 +219,16 @@ console.log(b.next(13));
 // { value: 6, done: false }
 // { value: 8, done: false }
 // { value: 42, done: true }
+
+简单梳理一下上面代码的执行
+第一次调用a.next();返回x+1的值是6;
+第二次调用next的时候没带参数,导致y的值等于2*undefined(NaN),除以3以后还是NaN,因此返回对象的value属性也NaN
+第三次运行next的时候不带参数,所以z等于undefined,返回value属性等于 5 + NaN + undefined,即NaN
+
+如果向next方法提供参数,返回结果就完全不一样了
+第一次调用a.next();返回x+1的值是6;
+第二次调用next,将上一次yield表达式的值设为12,因此y等于24,返回y/3等于8,
+第三次调用next方法,将上一次yield表达式的值设为13,因此z等于13,这时x等于5,y等于24,所以return语句的值等于42
+
+注意: 由于next方法的参数表示上一个yield表达式的返回值,所以在第一次使用next方法时,传递参数是无效的,V8引擎直接忽略第一次使用next方法时的参数,只有从第二次使用next方法开始,参数才是有效的
+从语义上讲,第一个next方法用来启动宾利器对象,所以不用带参数
