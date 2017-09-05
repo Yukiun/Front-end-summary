@@ -51,3 +51,6 @@ class Main extends React.Component {
 11,componentWillUnMount() 组件将要卸载时调用,一些事件监听和定时器需要在此时清除
 
 以上可以看出来react共有10个周期函数(render重复一次),这10个函数可以满足我们所有对组件操作的需求,利用的好可以提高开发效率和组件性能
+
+
+react生命周期
