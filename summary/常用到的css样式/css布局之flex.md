@@ -1,4 +1,4 @@
-#### 使用flex布局
+### 使用flex布局
 flex使用方法很简单,只需要将其display属性设置为flex即可,也可以设置行内的flex,记得webkit内核的浏览器,必须加上-webkit,
 - 注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。
 ```js
