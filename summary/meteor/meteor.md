@@ -94,7 +94,11 @@ node_modules/
 - 三个顶级的标签 `<head></head>`,`<body></body>`,`<template></template>`
 - 其中template解析为`meteor templates`,涉及html中`{{ > templateName }}`,涉及js中的`Template.templateName`，
 - 在js中获取body,`Template.body`,可以视为父组件，包含其他子组件
-- Spacebars是一种借鉴Handlebars的思想和语法，但是
+- Spacebars是一种借鉴Handlebars的思想和语法,[Spacebar语法](http://meteorcapture.com/spacebars/)
 ```
-
+<ul>
+  {{#each tasks}}
+    {{> task}}
+  {{/each}}
+</ul>
 ```
