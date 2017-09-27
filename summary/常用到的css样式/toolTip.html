@@ -11,51 +11,143 @@
             margin: 0;
             padding: 0;
         }
-
-        .toolTipWrap {}
-
-        .tag {
+        .wrap {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        /* 向下 */
+        .toolTip-bottom {
+            position: relative;
             width: 300px;
             height: 100px;
-            border: 5px solid #09F;
+            border: 1px solid #A5C4EC;
+            border-radius: 20px;
+            margin: 100px auto;
+            background-color: #fff;
+         }
+        .toolTip-bottom:before{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -20px;
+            left: 80px;
+            border-left: 20px solid transparent ;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #A5C4EC;
+        }
+
+        .toolTip-bottom:after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -17.6px;
+            left: 80px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #fff;
+        }
+          /* 向上 */
+          .toolTip-top {
             position: relative;
-            background-color: #FFF;
+            width: 300px;
+            height: 100px;
+            border: 1px solid #A5C4EC;
+            border-radius: 20px;
+            margin: 100px auto;
+            background-color: #fff;
+         }
+        .toolTip-top:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 80px;
+            border-left: 20px solid transparent ;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #A5C4EC;
         }
 
-        .tag em {
+        .toolTip-top:after{
+            content: '';
             display: block;
-            border-width: 20px;
             position: absolute;
-            bottom: -40px;
-            left: 100px;
-            border-style: solid dashed dashed;
-            border-color: #09F transparent transparent;
-            font-size: 0;
-            line-height: 0;
+            top: -17.6px;
+            left: 80px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #fff;
+        }
+        /* 向左 */
+        .toolTip-left {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            border: 1px solid #A5C4EC;
+            border-radius: 20px;
+            margin: 100px auto;
+            background-color: #fff;
+        }
+        .toolTip-left:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -20px;
+            top: 30px;
+            border-top: 20px solid transparent ;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #A5C4EC;
+        }
+        .toolTip-left:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: -18px;
+            top: 30px;
+            border-top: 20px solid transparent ;
+            border-bottom: 20px solid transparent;
+            border-right: 20px solid #fff;
         }
 
-        .tag span {
-            display: block;
-            border-width: 20px;
-            position: absolute;
-            bottom: -33px;
-            left: 100px;
-            border-style: solid dashed dashed;
-            border-color: #FFF transparent transparent;
-            font-size: 0;
-            line-height: 0;
+        /* 向右 */
+        .toolTip-right {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            border: 1px solid #A5C4EC;
+            border-radius: 20px;
+            margin: 100px auto;
+            background-color: #fff;
         }
+        .toolTip-right:before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: -20px;
+            top: 40px;
+            border-top: 20px solid transparent ;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #A5C4EC;
+        }
+        .toolTip-right:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: -18px;
+            top: 40px;
+            border-top: 20px solid transparent ;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid #fff;
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="toolTipWrap">
-        <div class=""></div>
-        <div></div>
-    </div>
-    <div class="tag">
-        <em></em>
-        <span></span> CSS气泡框实现
+    <div class="wrap">
+        <div class="toolTip-bottom"></div>
+        <div class="toolTip-top"></div>
+        <div class="toolTip-left"></div>
+        <div class="toolTip-right"></div>
     </div>
 </body>
 
