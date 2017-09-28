@@ -138,12 +138,42 @@
             border-bottom: 20px solid transparent;
             border-left: 20px solid #fff;
         }
+        .test {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            border-radius: 20px;
+            margin: 100px auto;
+            border: 6px solid blue;
+            background-color: #A5C4EC;
+        }
+        .test:before{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -20px;
+            left: 80px;
+            border-left: 20px solid transparent ;
+            border-right: 20px solid transparent;
+            border-top: 20px solid blue;
+        }
+        .test:after{
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -14px;
+            left: 80px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #fff;
+        }
 
     </style>
 </head>
 
 <body>
     <div class="wrap">
+        <div class="test"></div>
         <div class="toolTip-bottom"></div>
         <div class="toolTip-top"></div>
         <div class="toolTip-left"></div>
