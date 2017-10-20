@@ -1,6 +1,6 @@
 > 处理时间,获得昨天,明天,后天...以及对应的星期
 
-```
+```js
 const arr = [ '周日', '周一', '周二', '周三', '周四', '周五', '周六', ];
         function getDateStr(count) {
             if (count === 0) {
@@ -25,7 +25,7 @@ const arr = [ '周日', '周一', '周二', '周三', '周四', '周五', '周�
 
 > 时间戳转换成 2017.03 
 
-```
+```js
 const date = new Date();
 const Y = date.getFullYear() + '.';
 const M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
@@ -34,7 +34,7 @@ this.todayTime = Y + M;
 ```
 > 时间戳装换成  yyyy-MM-dd hh:mm:ss
   2017-04-21 08:19:00
-```
+```js
 time(value) {
     const date = new Date(value * 1000);
     const Y = date.getFullYear() + '-';
@@ -50,7 +50,7 @@ time(value) {
 
 >日期格式转换为 时间戳
 
-```
+```js
 // 也很简单
 const strtime = '2017-04-20 20:55:49:123';
 const date = new Date(strtime); //传入一个时间格式，如果不传入就是获取现在的时间了，这样做不兼容火狐。
@@ -76,7 +76,7 @@ time3 = Date.parse(date);
 
 > Date()的参数
 
-```
+```js
 new Date("month dd,yyyy hh:mm:ss");
 new Date("month dd,yyyy");
 new Date("yyyy/MM/dd hh:mm:ss");
@@ -96,7 +96,7 @@ new Date(1474006780);
 
 ```
 > 用正则表达式格式化日期
-```
+```js
 //格式化日期
 var reg = /^(\d{4})[/-](\d{2})[/-](\d{2})$/
 console.log('2016/11/18'.replace(reg, '$1年$2月$3日')) //2016年11月18日
@@ -105,7 +105,7 @@ console.log('2016-11-18'.replace(reg, '$1$2$3')) //20161118
 ```
 分组经常和反向引用一起使用，反向引用在前面的replace方法就有了，只不过没有说他的概念，这里说一下：当一个正则表达式被分组后，每个分组自动被赋予一个组号，一左到右分别是 $1 $2…
 分组，又称为子表达式。把正则表达式拆分成小表达式。
-```
+```js
 /不分组，量词仅作用到最后一个字符(c)
 console.log(/abc{2}/.test('abcabc')); // false
 console.log(/abc{2}/.test('abcc')); //true
