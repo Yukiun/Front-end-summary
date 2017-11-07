@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 100px;
+            margin-left: 200px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50%;
+            display: flex;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="http://oo4xdz5i0.bkt.clouddn.com/IMG_dsn1.jpg" alt="">
+        <img src="http://oo4xdz5i0.bkt.clouddn.com/IMG_dsn1.jpg" alt="">
+        <img src="http://oo4xdz5i0.bkt.clouddn.com/IMG_dsn1.jpg" alt="">
+        <img src="http://oo4xdz5i0.bkt.clouddn.com/IMG_dsn1.jpg" alt="">
+
+    </div>
+    <label for="file"></label>
+    <input type="file" id="file" onchange="onChange(event)">
+</body>
+<script>
+    https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader
+    const file = document.getElementById('file');
+    // file.onchange = function() {
+    //     console.log(file.files);
+    // }
+    file.onchange = (event) =>{
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            // The file's text will be printed here
+            console.log(event.target.result)
+        };
+
+        reader.readAsText(file.files[0]);
+    }
+
+    // FileList: {
+    //     name: "添加好友.zip",
+    //     FilelastModified: 1507790212000
+    //     lastModifiedDate: Thu Oct 12 2017 14: 36: 52 GMT + 0800(CST),
+    //     size: 255087,
+    //     type: "application/zip",
+    //     webkitRelativePath: "",
+    // }
+</script>
+
+</html>
