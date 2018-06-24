@@ -14,6 +14,9 @@
 - Node
 - 微信小程序
 - HTTP
+   - [http方法](./HTTP/http方法.md)
+   - [http状态码](./HTTP/http状态码.md)
+   - [http首部](./HTTP/http首部.md)
 - Linux
 - Nginx
 - 面试题

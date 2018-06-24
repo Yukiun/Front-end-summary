@@ -1,6 +1,6 @@
 > #### 在vue中实现一个选择开始日期,输入持续天数,自动更改结束日期的功能,
 
-```
+```js
 template>
     <ul class="setDays fix-float">
         <li>

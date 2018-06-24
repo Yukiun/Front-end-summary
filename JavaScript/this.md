@@ -1,7 +1,7 @@
 ## 关于默认this
 - 浏览器默认的this为window
 
-```
+```js
 function test() {
     console.log(this);
 }
@@ -38,7 +38,7 @@ test(); //window
 - 普通函数的this指向函数的调用者
 - 箭头函数的this指向所在作用域的this
 
-```
+```js
 var obj = {
     name: 'objName',
     say() {
@@ -53,7 +53,7 @@ obj.say() // objName
 obj.read() // {}, undefined
 ```
 
-```
+```js
 window.val = 1;
 var obj = {
     val: 2,

@@ -1,6 +1,6 @@
 > 自己封装的一个select组件
 
-```
+```js
 <template>
     <div class="searchList fix-float"
          :class="{fixSearch:scrolled}">

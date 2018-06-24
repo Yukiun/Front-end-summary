@@ -1,6 +1,6 @@
 >vue中scroll函数的用法
 
-```
+```js
 data () {
   return {
     scrolled: false
