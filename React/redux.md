@@ -4,7 +4,7 @@ redux的三个概念: action reducer store
 
 * action: 一个包含type的object, 通常把一个返回action对象的函数称为action函数, 直接简称为action
 
-```
+```js
 
 function action(data) {
     return {
@@ -17,7 +17,7 @@ function action(data) {
 ```
 * reducer: 一个根据action type来更新数据的函数
 
-```
+```js
 function reducer(state = { data: 1 }, action) {
     switch (action.type) {
         case 'action1': {
@@ -38,7 +38,7 @@ function reducer(state = { data: 1 }, action) {
 
 * store: 使用createStore从reducer函数创建的数据对象, 包含getState和dispatch方法
 
-```
+```js
 import { createStore } from 'redux';
 
 let store = createStore(reducer);
@@ -57,7 +57,7 @@ console.log(store.getState())
 
 * Provider: 顶层组件, 注入store对象
 
-```
+```js
 import { Provider } from 'react-redux';
 
 ReactDom.render(
@@ -70,7 +70,7 @@ ReactDom.render(
 ```
 
 * connect: 工具函数, 参数一为函数, 该函数接收state, 返回一个对象, 对象包含一系列数据. 参数二为函数, 该函数接收dispatch, 返回一个对象, 对象包含一系列方法
-```
+```js
 import { connect } from 'react-redux';  
 
 class App extends Component {
@@ -111,8 +111,8 @@ export default connect(
 * 可以直接比较(深层比较)
 * 创建(fromJS), 还原(toJS)
 
-```
-上述的reducer可以用下面的代码优化
+```js
+// 上述的reducer可以用下面的代码优化
 
 function reducer(state = immutable.fromJS({ data: 1, obj: { aa: 1 } }), action) {
     switch (action.type) {

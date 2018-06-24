@@ -85,7 +85,7 @@ new Date(yyyy,mth,dd,hh,mm,ss);
 new Date(yyyy,mth,dd);
 new Date(ms);
 
-比如
+// 比如
 new Date("September 16,2016 14:15:05");
 new Date("September 16,2016");
 new Date("2016/09/16 14:15:05");
@@ -97,7 +97,7 @@ new Date(1474006780);
 ```
 > 用正则表达式格式化日期
 ```js
-//格式化日期
+// 格式化日期
 var reg = /^(\d{4})[/-](\d{2})[/-](\d{2})$/
 console.log('2016/11/18'.replace(reg, '$1年$2月$3日')) //2016年11月18日
 console.log('2016-11-18'.replace(reg, '$1年$2月$3日')) //2016年11月18日
@@ -106,7 +106,7 @@ console.log('2016-11-18'.replace(reg, '$1$2$3')) //20161118
 分组经常和反向引用一起使用，反向引用在前面的replace方法就有了，只不过没有说他的概念，这里说一下：当一个正则表达式被分组后，每个分组自动被赋予一个组号，一左到右分别是 $1 $2…
 分组，又称为子表达式。把正则表达式拆分成小表达式。
 ```js
-/不分组，量词仅作用到最后一个字符(c)
+// 不分组，量词仅作用到最后一个字符(c)
 console.log(/abc{2}/.test('abcabc')); // false
 console.log(/abc{2}/.test('abcc')); //true
 

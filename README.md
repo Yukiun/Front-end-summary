@@ -10,7 +10,9 @@
     - [观察者模式](./JavaScript设计模式/观察者模式.js)
 - ES6
 - React
+    - [redux](./React/redux.md)
 - Vue
+    - [vuex](./Vue/vuex.md)
 - Node
 - 微信小程序
 - HTTP

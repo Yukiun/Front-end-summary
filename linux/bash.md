@@ -11,10 +11,6 @@ alias lm='ls -al'
 - 作业控制，前台，后台控制
 - 程序脚本(shell script)
 
-
-
-
-
 ### shell的变量功能
 
 brew为命令行安装软件的工具
