@@ -20,6 +20,7 @@
     - [vuex](./Vue/vuex.md)
 - Node
    - [node的path模块](./node/node-path.md)
+   - [node的fs模块](./node/node-fs.md)
    - [node定时器](./node/node定时器.md)
    - [发布npm](./node/npm-publish.md)
    - [npm-scripts](./node/node-scripts.md)
