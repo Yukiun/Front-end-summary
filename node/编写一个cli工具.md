@@ -13,11 +13,11 @@
 ```
 
 # 3.用到的工具
-commander
-node中的process,child_process, fs, path模块
-deepmerge
-yeoman-generator
-camelcase
-shelljs
+- commander
+- node中的process,child_process, fs, path模块
+- deepmerge
+- yeoman-generator
+- camelcase
+- shelljs
 
 
