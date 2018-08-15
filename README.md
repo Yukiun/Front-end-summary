@@ -41,5 +41,5 @@
 - 面试题
    - [18道JavaScript面试题](./面试题/18道js笔试题.md)
 - 数据结构与算法
-   - [常用算法(一)](./数据结构与算法/常用算法(一).md)
+   - [leetcode](https://github.com/funnycoderstar/leetcode)
 
